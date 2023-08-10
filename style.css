@@ -21,6 +21,7 @@ background-color: #262d3e;
 #style{
     color: #d1d5db;
 }
+
 body::-webkit-scrollbar {
     width: 0.3em;
   }
