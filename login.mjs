@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 import {
   getAuth,
-  signInWithEmailAndPassword,
+  signInWithEmailAndPassword,onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -31,4 +31,9 @@ btn1.addEventListener("click", () => {
       const errorMessage = error.message;
       alert("Please Enter Correct Email / Password");
     });
+});
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    location.replace("index.html")
+  }
 });

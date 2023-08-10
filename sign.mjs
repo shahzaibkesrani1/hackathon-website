@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword ,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
 import { getFirestore, collection, setDoc, doc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyB00JohWr2-q5riS09Y8LasIOOFNePH6nA",
@@ -83,3 +83,8 @@ btn.addEventListener('click', () => {
         }
     });
 })
+onAuthStateChanged(auth, async (user) => {
+  if (user) {
+    location.replace("index.html")
+  }
+});
